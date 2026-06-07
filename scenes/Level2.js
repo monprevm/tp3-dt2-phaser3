@@ -1,4 +1,4 @@
-// Level 2
+// Level 2 
 
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -10,7 +10,7 @@ export default class Game extends Phaser.Scene {
   }
 
   preload() {
-    this.load.tilemapTiledJSON("map", "public/assets/tilemap/map.json");
+    this.load.tilemapTiledJSON("level2", "public/assets/tilemap/level2.json");
     this.load.image("tileset", "public/assets/texture.png");
     this.load.image("star", "public/assets/star.png");
 
@@ -21,7 +21,7 @@ export default class Game extends Phaser.Scene {
   }
 
    create() {
-    const map = this.make.tilemap({ key: "map" });
+    const level2 = this.make.tilemap({ key: "level2" });
 
     // Parameters are the name you gave the tileset in Tiled and then the key of the tileset image in
     // Phaser's cache (i.e. the name you used in preload)

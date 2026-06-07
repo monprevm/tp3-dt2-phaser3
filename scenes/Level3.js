@@ -1,0 +1,73 @@
+// Level 3
+
+export default class Game extends Phaser.Scene {
+  constructor() {
+    super("level3");
+  }
+
+  init() {
+    this.score = 0;
+  }
+
+  preload() {
+    this.load.tilemapTiledJSON("level3", "public/assets/tilemap/level3.json");
+    this.load.image("tileset", "public/assets/texture.png");
+    this.load.image("star", "public/assets/star.png");
+
+    this.load.spritesheet("dude", "./public/assets/dude.png", {
+      frameWidth: 32,
+      frameHeight: 48,
+    });
+  }
+
+   create() {
+    const level3 = this.make.tilemap({ key: "level3" });
+
+    // Parameters are the name you gave the tileset in Tiled and then the key of the tileset image in
+    // Phaser's cache (i.e. the name you used in preload)
+    const tileset = map.addTilesetImage("tileset", "tileset");
+
+    // Parameters: layer name (or index) from Tiled, tileset, x, y
+    const belowLayer = map.createLayer("Fondo", tileset, 0, 0);
+    const platformLayer = map.createLayer("Plataformas", tileset, 0, 0);
+    const objectsLayer = map.getObjectLayer("Objetos");
+
+    // Find in the Object Layer, the name "dude" and get position
+    const spawnPoint = map.findObject(
+      "Objetos",
+      (obj) => obj.name === "player"
+    );
+    console.log("spawnPoint", spawnPoint);
+
+    this.player = this.physics.add.sprite(spawnPoint.x, spawnPoint.y, "dude");
+
+    this.player.setBounce(0.2);
+    this.player.setCollideWorldBounds(true);
+
+    this.anims.create({
+      key: "left",
+      frames: this.anims.generateFrameNumbers("dude", { start: 0, end: 3 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "turn",
+      frames: [{ key: "dude", frame: 4 }],
+      frameRate: 20,
+    });
+
+    this.anims.create({
+      key: "right",
+      frames: this.anims.generateFrameNumbers("dude", { start: 5, end: 8 }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
+
+    platformLayer.setCollisionByProperty({ esColisionable: true });
+    this.physics.add.collider(this.player, platformLayer);
+   }
+}
