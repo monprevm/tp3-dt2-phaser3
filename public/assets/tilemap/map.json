@@ -93,18 +93,20 @@
                  "height":0,
                  "id":1,
                  "name":"player",
+                 "opacity":1,
                  "point":true,
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":640.474425500371,
-                 "y":387.842846553002
+                 "x":683.421793921424,
+                 "y":70.3691623424758
                 }, 
                 {
                  "height":0,
                  "id":2,
                  "name":"",
+                 "opacity":1,
                  "point":true,
                  "rotation":0,
                  "type":"star",
@@ -117,18 +119,20 @@
                  "height":0,
                  "id":3,
                  "name":"",
+                 "opacity":1,
                  "point":true,
                  "rotation":0,
                  "type":"star",
                  "visible":true,
                  "width":0,
                  "x":84,
-                 "y":579
+                 "y":598.368421052632
                 }, 
                 {
                  "height":0,
                  "id":4,
                  "name":"",
+                 "opacity":1,
                  "point":true,
                  "rotation":0,
                  "type":"star",
@@ -141,30 +145,33 @@
                  "height":0,
                  "id":5,
                  "name":"",
+                 "opacity":1,
                  "point":true,
                  "rotation":0,
                  "type":"star",
                  "visible":true,
                  "width":0,
-                 "x":590,
-                 "y":82
+                 "x":398,
+                 "y":381.789473684211
                 }, 
                 {
                  "height":0,
                  "id":6,
                  "name":"",
+                 "opacity":1,
                  "point":true,
                  "rotation":0,
                  "type":"star",
                  "visible":true,
                  "width":0,
-                 "x":464,
-                 "y":231
+                 "x":520.421052631579,
+                 "y":575.421052631579
                 }, 
                 {
                  "height":0,
                  "id":7,
                  "name":"",
+                 "opacity":1,
                  "point":true,
                  "rotation":0,
                  "type":"",
@@ -180,10 +187,10 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":8,
+ "nextobjectid":10,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.11.2",
+ "tiledversion":"1.12.2",
  "tileheight":24,
  "tilesets":[
         {
