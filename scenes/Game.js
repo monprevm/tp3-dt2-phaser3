@@ -158,18 +158,8 @@ export default class Game extends Phaser.Scene {
 // Condición: Cambio de nivel (Mejora 1)
 
       if (this.score >= 50) {
-        this.scene.start("level2");
+        this.scene.start("level2", { score: 50});
       }
     }
   }
-
-changeLevel(won) {
-  if (this.changeScene) return;
-  this.changeScene = true;
-
-  this.scene.start("Level 2", {
-    score: 50
-  });
-}
-
 }
