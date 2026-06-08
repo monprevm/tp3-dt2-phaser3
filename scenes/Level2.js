@@ -1,6 +1,6 @@
 // Level 2 
 
-export default class Game extends Phaser.Scene {
+export default class level2 extends Phaser.Scene {
   constructor() {
     super("level2");
   }
